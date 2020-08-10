@@ -6,7 +6,7 @@
 #Implementation note: Does not use any built in python data structures/methods
 
 
-# Import pre-written DynamicArray and LinkedList classes
+#Import pre-written DynamicArray and LinkedList classes
 
 from a5_include import *
 
