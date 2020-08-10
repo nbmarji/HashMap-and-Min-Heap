@@ -7,7 +7,6 @@
 
 
 # Import pre-written DynamicArray and LinkedList classes
-from math import floor
 
 from a5_include import *
 
