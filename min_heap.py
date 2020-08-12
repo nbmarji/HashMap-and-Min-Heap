@@ -96,7 +96,7 @@ class MinHeap:
 
         node_index = (newheap.length()-1 - 1)//2 #start at PARENT of last node
 
-        while node_index != -1:  #percolates through all non-parent nodes, in reverse
+        while node_index != 0:  #percolates through all non-parent nodes, in reverse
 
             ##PERC UP
             p_index = ((node_index - 1) // 2)  # inits p index, p
