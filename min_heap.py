@@ -94,23 +94,16 @@ class MinHeap:
             val = da.get_at_index(i)
             newheap.append(val)
 
-        node_index = (newheap.length()-1 - 1)//2 #start at PARENT of last node
+        self.heap = newheap
 
-        while node_index != 0:  #percolates through all non-parent nodes, in reverse
+        node_index = (da.length()-1)//2 - 1 #start at PARENT of last node
 
-            ##PERC UP
-            p_index = ((node_index - 1) // 2)  # inits p index, p
-            index = node_index
-
-            while newheap.get_at_index(p_index) > newheap.get_at_index(node_index) and index != 0:
-                newheap.swap(p_index, index)  # swaps node and parent
-                index = p_index  # updates node's index
-                p_index = ((index - 1) // 2)  # finds next parent's index
-
-            ##END PERC UP
+        while node_index != -1:  #percolates through all non-parent nodes, in reverse
+            ##PERC DOWN
+            self.perc_down(node_index)
+            ##END PERC DOWN
             node_index -= 1
 
-        self.heap = newheap  #update self.heap
 
     def perc_down(self, index):
         """percolates down """
@@ -181,7 +174,8 @@ if __name__ == '__main__':
 
     print("\nPDF - build_heap example 1")
     print("--------------------------")
-    da = DynamicArray([100, 20, 6, 200, 90, 150, 300])
+    #da = DynamicArray([100, 20, 6, 200, 90, 150, 300])
+    da= DynamicArray([100, 20, 6, 200, 90, 150, 300])
     h = MinHeap(['zebra', 'apple'])
     print(h)
     h.build_heap(da)
