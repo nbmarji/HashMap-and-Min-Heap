@@ -99,9 +99,7 @@ class MinHeap:
         node_index = (da.length()-1)//2 - 1 #start at PARENT of last node
 
         while node_index != -1:  #percolates through all non-parent nodes, in reverse
-            ##PERC DOWN
             self.perc_down(node_index)
-            ##END PERC DOWN
             node_index -= 1
 
 
