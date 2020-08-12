@@ -84,21 +84,44 @@ class MinHeap:
 
     def build_heap(self, da: DynamicArray) -> None:
         """
-        TODO: Write this implementation
+        receives a dynamic array with objects in any order and builds a proper
+        MinHeap from them
         """
-        pass
 
+        newheap = DynamicArray()
 
-    def perc_down(self,index):
+        for i in range(da.length()): #transfer DA into new variable
+            val = da.get_at_index(i)
+            newheap.append(val)
+
+        node_index = (newheap.length()-1 - 1)//2 #start at PARENT of last node
+
+        while node_index != -1:  #percolates through all non-parent nodes, in reverse
+
+            ##PERC UP
+            p_index = ((node_index - 1) // 2)  # inits p index, p
+            index = node_index
+
+            while newheap.get_at_index(p_index) > newheap.get_at_index(node_index) and index != 0:
+                newheap.swap(p_index, index)  # swaps node and parent
+                index = p_index  # updates node's index
+                p_index = ((index - 1) // 2)  # finds next parent's index
+
+            ##END PERC UP
+            node_index -= 1
+
+        self.heap = newheap  #update self.heap
+
+    def perc_down(self, index):
         """percolates down """
-        l_pos= 2*index+1
-        r_pos= 2*index+2
+        l_pos = 2*index+1
+        r_pos = 2*index+2
 
-        length= self.heap.length()-1
-        minimum= index  #current min is the node
+        length = self.heap.length()-1
+        minimum = index  #current min is the node
 
         if l_pos <= length and self.heap.get_at_index(index) > self.heap.get_at_index(l_pos):
-            minimum= l_pos
+            minimum = l_pos  #l_pos <= length makes sure l is not beyond the bounds of the array
 
         if r_pos <= length and self.heap.get_at_index(minimum) > self.heap.get_at_index(r_pos):
             minimum = r_pos
@@ -108,17 +131,18 @@ class MinHeap:
             self.perc_down(minimum)  #call again with minimum as current
 
     def perc_up(self, index):
+
         """percolates up"""
 
-        node = self.heap.get_at_index(index)
         p_index = ((index - 1) // 2)  # inits p index, p
-        p = self.heap.get_at_index(p_index)
 
-        while p > node and index != 0:
+        while self.heap.get_at_index(p_index) > self.heap.get_at_index(index) and index != 0:
+
             self.heap.swap(p_index, index)  # swaps node and parent
             index = p_index  # updates node's index
             p_index = ((index - 1) // 2)  # finds next parent's index
-            p = self.heap.get_at_index(p_index)  # sets p equal to parent
+
+        return
 
 # BASIC TESTING
 if __name__ == '__main__':
