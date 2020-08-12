@@ -132,7 +132,7 @@ class MinHeap:
 
     def perc_up(self, index):
 
-        """percolates up"""
+        """percolates up """
 
         p_index = ((index - 1) // 2)  # inits p index, p
 
