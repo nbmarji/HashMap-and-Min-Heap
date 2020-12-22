@@ -1,6 +1,3 @@
-# Course: CS261 - Data Structures
-# Assignment: 5
-# Student: Nora Marji
 # Description: Hash map data structure, which uses a dynamic array to store the hash table,
 # and implements chaining for collision resolution using a singly linked list
 
@@ -10,7 +7,6 @@ from a5_include import *
 def hash_function_1(key: str) -> int:
     """
     Sample Hash function #1 to be used with A5 HashMap implementation
-    DO NOT CHANGE THIS FUNCTION IN ANY WAY
     """
     hash = 0
     for letter in key:
@@ -20,7 +16,6 @@ def hash_function_1(key: str) -> int:
 def hash_function_2(key: str) -> int:
     """
     Sample Hash function #2 to be used with A5 HashMap implementation
-    DO NOT CHANGE THIS FUNCTION IN ANY WAY
     """
     hash, index = 0, 0
     index = 0
@@ -34,7 +29,6 @@ class HashMap:
     def __init__(self, capacity: int, function) -> None:
         """
         Init new HashMap based on DA with SLL for collision resolution
-        DO NOT CHANGE THIS METHOD IN ANY WAY
         """
         self.buckets = DynamicArray()
         for _ in range(capacity):
@@ -46,7 +40,6 @@ class HashMap:
     def __str__(self) -> str:
         """
         Return content of hash map t in human-readable form
-        DO NOT CHANGE THIS METHOD IN ANY WAY
         """
         out = ''
         for i in range(self.buckets.length()):
@@ -200,11 +193,6 @@ class HashMap:
                 da.append(node.key)
 
         return da
-
-
-    #def display(self): #for testing, DELETE LATER
-       # for i in range(self.buckets.length()):
-         #   print(self.buckets.get_at_index(i))
 
 # BASIC TESTING
 if __name__ == "__main__":
