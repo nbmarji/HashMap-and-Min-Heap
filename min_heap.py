@@ -1,6 +1,3 @@
-# Course: CS261 - Data Structures
-# Assignment: 5
-# Student: Nora Marji
 # Description: Min heap implementation with functions add(), get_min()
 # remove_min(), and build_heap().
 #Implementation note: Does not use any built in python data structures/methods
@@ -13,8 +10,7 @@ from a5_include import *
 
 class MinHeapException(Exception):
     """
-    Custom exception to be used by MinHeap class
-    DO NOT CHANGE THIS CLASS IN ANY WAY
+    (Skeleton Code) Custom exception to be used by MinHeap class
     """
     pass
 
@@ -22,8 +18,7 @@ class MinHeapException(Exception):
 class MinHeap:
     def __init__(self, start_heap=None):
         """
-        Initializes a new MinHeap
-        DO NOT CHANGE THIS METHOD IN ANY WAY
+        (Skeleton Code) Initializes a new MinHeap
         """
         self.heap = DynamicArray()
 
@@ -35,15 +30,13 @@ class MinHeap:
 
     def __str__(self) -> str:
         """
-        Return MH content in human-readable form
-        DO NOT CHANGE THIS METHOD IN ANY WAY
+        (Skeleton Code) Return MH content in human-readable form
         """
         return 'HEAP ' + str(self.heap)
 
     def is_empty(self) -> bool:
         """
-        Return True if no elements in the heap, False otherwise
-        DO NOT CHANGE THIS METHOD IN ANY WAY
+        (Skeleton Code) Return True if no elements in the heap, False otherwise
         """
         return self.heap.length() == 0
 
