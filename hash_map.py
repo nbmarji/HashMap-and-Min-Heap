@@ -6,7 +6,7 @@ from a5_include import *
 
 def hash_function_1(key: str) -> int:
     """
-    Sample Hash function #1 to be used with A5 HashMap implementation
+    (Skeleton Code) Sample Hash function #1 to be used with A5 HashMap implementation
     """
     hash = 0
     for letter in key:
@@ -15,7 +15,8 @@ def hash_function_1(key: str) -> int:
 
 def hash_function_2(key: str) -> int:
     """
-    Sample Hash function #2 to be used with A5 HashMap implementation
+    (Skeleton Code) Sample Hash function #2 to be used with A5 HashMap implementation
+  
     """
     hash, index = 0, 0
     index = 0
@@ -28,7 +29,7 @@ def hash_function_2(key: str) -> int:
 class HashMap:
     def __init__(self, capacity: int, function) -> None:
         """
-        Init new HashMap based on DA with SLL for collision resolution
+        (Skeleton Code) Init new HashMap based on DA with SLL for collision resolution
         """
         self.buckets = DynamicArray()
         for _ in range(capacity):
@@ -39,7 +40,7 @@ class HashMap:
 
     def __str__(self) -> str:
         """
-        Return content of hash map t in human-readable form
+        (Skeleton Code) Return content of hash map t in human-readable form
         """
         out = ''
         for i in range(self.buckets.length()):
