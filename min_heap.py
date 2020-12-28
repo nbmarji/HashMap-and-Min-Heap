@@ -78,7 +78,7 @@ class MinHeap:
     def build_heap(self, da: DynamicArray) -> None:
         """
         receives a dynamic array with objects in any order and builds a proper
-        MinHeap from them
+        MinHeap from them with O(n) runtime complexity
         """
 
         newheap = DynamicArray()
